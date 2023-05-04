@@ -17,7 +17,15 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    public void checkEnemyTouchPlayer(){}
+    public void checkEnemyTouchWalls(){}
+    public void checkPlayerTouchWalls(){}
+    public void checkVictory(){}
     public static void main(String[] args) {
+        Player player=new Player();
+        int[][] field=new int[18][12];
+        Enemy[] enemies;
+        Bomb[] bombs;
         launch();
     }
 }
