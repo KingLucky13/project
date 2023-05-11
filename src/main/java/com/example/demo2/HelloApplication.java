@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HelloApplication extends Application {
+    Player player=new Player();
+    int[][] field=new int[18][12];
+    List<Enemy> enemies;
+    Bomb[] bombs;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("level1.fxml"));
@@ -36,7 +40,9 @@ public class HelloApplication extends Application {
     public void checkEnemyTouchPlayer(){}
     public void checkEnemyTouchWalls(){}
     public void checkPlayerTouchWalls(){}
-    public boolean checkVictory(List<Enemy> enemies){
-        return enemies.size() == 0;
+    public void checkVictory(){
+        if(enemies.size()==0){
+            System.out.println("win");
+        }
     }
 }
