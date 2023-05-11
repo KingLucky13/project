@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
         Scene homeScreen = new Scene(fxmlLoader1.load(), 900, 600);
         Scene level1 = new Scene(fxmlLoader.load(), 900, 600);
         stage.setTitle("BOMBASTIC");
-        Image image = new Image("C:\\Users\\m9854\\IdeaProjects\\GUIproject\\src\\main\\resources\\com\\example\\demo2\\bomb_forIcon.png");
+        Image image = new Image("C:\\Users\\artyo\\Desktop\\demo2\\src\\main\\resources\\com\\example\\demo2");
         stage.getIcons().add(image);
         stage.setScene(level1);
         stage.show();
