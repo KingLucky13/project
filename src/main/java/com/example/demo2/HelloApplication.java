@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
         stage.setTitle("BOMBASTIC");
         Image image = new Image("file:main/java/resources/com.example.demo2/bomb_forlcon.png");
         stage.getIcons().add(image);
-        stage.setScene(level1);
+        stage.setScene(homeScreen);
         stage.show();
         level1.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
