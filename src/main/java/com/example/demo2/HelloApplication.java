@@ -52,12 +52,46 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    public void checkEnemyTouchPlayer(){}
-    public void checkEnemyTouchWalls(){}
-    public void checkPlayerTouchWalls(){}
-    public void checkVictory(){
-        if(enemies.size()==0){
-            System.out.println("win");
+    private void showVictoryScreen() {
+        // Display the victory screen
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("victoryScreen.fxml"));
+
+        Scene victoryScreen = null;
+        try {
+            victoryScreen = new Scene(fxmlLoader.load(), 900, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Image image = new Image("src/main/resources/com/example/demo2/victory.png");
+        Stage stage = (Stage) player.getScene().getWindow(); // Get the current stage
+        stage.setScene(victoryScreen);
+        gameOver = true;
+    }
+
+    private void showDefeatScreen() {
+        // Display the defeat screen
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("defeatScreen.fxml"));
+        Scene defeatScreen = null;
+        try {
+            defeatScreen = new Scene(fxmlLoader.load(), 900, 600);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Image image = new Image("src/main/resources/com/example/demo2/gameover.png");
+        Stage stage = (Stage) player.getScene().getWindow(); // Get the current stage
+        stage.setScene(defeatScreen);
+        gameOver = true;
+    }
+    public void checkGameStatus() {
+        if (enemies.size() == 0) {
+            System.out.println("You win!");
+            showVictoryScreen();
+        } else if (enemies.size()>=1) {
+            System.out.println("Game over!");
+            showDefeatScreen();
         }
     }
+
+
+
 }

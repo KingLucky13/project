@@ -1,4 +1,5 @@
-package com.example.demo2;public class Player {
+package com.example.demo2;
+public class Player {
     int x;
     int y;
     int speedX;
