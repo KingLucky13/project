@@ -12,7 +12,7 @@ public class GameWithMusic {
 
     public void playBackgroundMusic() {
         try {
-            File audioFile = new File("src/main/resources/com/example/demo2/vesna.wav");
+            File audioFile = new File("src/main/resources/com/example/demo2/music.wav");
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
             clip = AudioSystem.getClip();
             clip.open(audioStream);

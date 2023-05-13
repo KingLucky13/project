@@ -29,6 +29,7 @@ public class HelloApplication extends Application {
         stage.getIcons().add(image);
         stage.setScene(homeScreen);
 
+
         gameWithMusic = new GameWithMusic(); // Instantiate the GameWithMusic class
 
         stage.show();
@@ -47,7 +48,7 @@ public class HelloApplication extends Application {
             }
         });
 
-        // Add a shutdown hook to stop the music when the application is closed
+        // hook for stopping the music
         stage.setOnCloseRequest(event -> {
             gameWithMusic.stopMusic();
         });
