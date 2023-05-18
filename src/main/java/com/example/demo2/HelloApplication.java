@@ -25,10 +25,16 @@ public class HelloApplication extends Application {
     public Button startButton;
     Controller gameController;
     private GameWithMusic gameWithMusic; // Declare the GameWithMusic instance as a class variable
-    AnimationTimer checkTimer=new AnimationTimer() {
+    AnimationTimer checkDeathTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
             gameController.checkDeath();
+        }
+    };
+    AnimationTimer checkWinTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            gameController.checkWin();
         }
     };
     @Override
@@ -63,22 +69,16 @@ public class HelloApplication extends Application {
     public void checkPlayerTouchWalls() {
     }
 
-    public void checkVictory() {
-        if (enemies.size() == 0) {
-            System.out.println("win");
-        }
-    }
-
     public void startButtonClicked(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("level1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         Stage stage = new Stage();
         gameController=fxmlLoader.getController();
         gameController.parseField();
-        System.out.println(gameController);
         stage.setScene(scene);
         stage.show();
-        checkTimer.start();
+        checkDeathTimer.start();
+        checkWinTimer.start();
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {

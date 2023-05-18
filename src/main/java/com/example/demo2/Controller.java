@@ -20,6 +20,9 @@ public class Controller {
     public ImageView enemy2;
     @FXML
     public ImageView enemy3;
+    boolean isEnemyAlive1=true;
+    boolean isEnemyAlive2=true;
+    boolean isEnemyAlive3=true;
     public ImageView bomb;
     public ImageView playerId;
     public int px=1;
@@ -49,6 +52,11 @@ public class Controller {
     public void checkDeath(){
         if(enemy1.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy2.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy3.getBoundsInParent().intersects(playerId.getBoundsInParent())){
             System.out.println("death");
+        }
+    }
+    public void checkWin(){
+        if(!isEnemyAlive1 && !isEnemyAlive2 && !isEnemyAlive3){
+            System.out.println("win");
         }
     }
 }
