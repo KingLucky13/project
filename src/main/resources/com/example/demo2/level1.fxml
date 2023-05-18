@@ -10,7 +10,7 @@
             <Image url="@grass.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0">
+      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#placeBomb">
          <image>
             <Image url="@player.png" />
          </image>

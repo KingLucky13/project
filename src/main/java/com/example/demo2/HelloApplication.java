@@ -24,8 +24,6 @@ public class HelloApplication extends Application {
     @FXML
     public Button startButton;
     Controller gameController;
-    List<Enemy> enemies;
-    Bomb[] bombs;
     private GameWithMusic gameWithMusic; // Declare the GameWithMusic instance as a class variable
     AnimationTimer checkTimer=new AnimationTimer() {
         @Override
