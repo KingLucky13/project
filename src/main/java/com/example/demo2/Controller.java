@@ -10,18 +10,24 @@ import javafx.scene.input.MouseEvent;
 public class Controller {
 
     @FXML
-    public ImageView player;
+    public ImageView enemy1;
+    @FXML
+    public ImageView enemy2;
+    @FXML
+    public ImageView enemy3;
+    public ImageView bomb;
+    public ImageView playerId;
+    public int px=1;
+    public int py=1;
+    public int[][] field = new int[18][12];
+    public void movePlayer(int x,int y){
 
-    @FXML
-    public void onMauseClicked(MouseEvent mouseEvent) {
-        player.setLayoutX(100);
+        playerId.setLayoutX(playerId.getLayoutX()+x*50);
+        playerId.setLayoutY(playerId.getLayoutY()+y*50);
     }
-    @FXML
-    public void onKeyPressed(KeyEvent keyEvent) {
-        player.setLayoutY(100);
+    public void placeBomb(MouseEvent mouseEvent) {
+        bomb.setLayoutX(playerId.getLayoutX());
+        bomb.setLayoutY(playerId.getLayoutY());
     }
-    @FXML
-    public void onKeyTyped(KeyEvent keyEvent) {
-        player.setLayoutY(100);
-    }
+
 }

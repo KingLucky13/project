@@ -3,14 +3,14 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#onKeyTyped" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
             <Image url="@grass.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="player" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onKeyPressed="#onKeyPressed" onMouseClicked="#onMauseClicked">
+      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" >
          <image>
             <Image url="@player.png" />
          </image>
@@ -435,12 +435,12 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="500.0">
+      <ImageView fx:id="enemy1" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="500.0">
          <image>
             <Image url="@enemy.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="450.0">
+      <ImageView fx:id="enemy2" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="450.0">
          <image>
             <Image url="@enemy.png" />
          </image>
@@ -620,7 +620,7 @@
             <Image url="@stone.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="309.0">
+      <ImageView fx:id="enemy3" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="309.0">
          <image>
             <Image url="@enemy.png" />
          </image>
@@ -765,5 +765,9 @@
             <Image url="@stone.png" />
          </image>
       </ImageView>
+      <ImageView id="bomb" fx:id="bomb" fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bomb_forIcon.png" />
+         </image></ImageView>
    </children>
 </Pane>
