@@ -12,8 +12,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 public class HelloApplication extends Application {
     @FXML
@@ -42,7 +46,7 @@ public class HelloApplication extends Application {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch();
     }
 
@@ -66,6 +70,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
         Stage stage = new Stage();
         gameController=fxmlLoader.getController();
+        gameController.parseField();
         System.out.println(gameController);
         stage.setScene(scene);
         stage.show();
