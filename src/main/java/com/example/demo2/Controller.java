@@ -46,5 +46,9 @@ public class Controller {
         bomb.setLayoutX(playerId.getLayoutX());
         bomb.setLayoutY(playerId.getLayoutY());
     }
-
+    public void checkDeath(){
+        if(enemy1.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy2.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy3.getBoundsInParent().intersects(playerId.getBoundsInParent())){
+            System.out.println("death");
+        }
+    }
 }

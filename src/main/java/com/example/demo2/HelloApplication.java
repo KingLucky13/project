@@ -1,5 +1,6 @@
 package com.example.demo2;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -26,7 +27,12 @@ public class HelloApplication extends Application {
     List<Enemy> enemies;
     Bomb[] bombs;
     private GameWithMusic gameWithMusic; // Declare the GameWithMusic instance as a class variable
-
+    AnimationTimer checkTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            gameController.checkDeath();
+        }
+    };
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("homeScreen.fxml"));
@@ -74,6 +80,7 @@ public class HelloApplication extends Application {
         System.out.println(gameController);
         stage.setScene(scene);
         stage.show();
+        checkTimer.start();
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
