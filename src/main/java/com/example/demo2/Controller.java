@@ -1,5 +1,6 @@
 package com.example.demo2;
 
+import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -27,7 +28,21 @@ public class Controller {
     public ImageView playerId;
     public int px=1;
     public int py=1;
+    public int bx;
+    public int by;
     public String[][] field = new String[12][18];
+    int bombTimerStartTime;
+    AnimationTimer bombTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            if((int)System.currentTimeMillis()-bombTimerStartTime>=500){
+                System.out.println("boom "+bx+" "+by);
+                bomb.setLayoutX(-100);
+                stop();
+            }
+        }
+    };
+
     public void parseField() throws FileNotFoundException {
         Scanner levelTxt=new Scanner(new File("src/main/resources/com/example/demo2/level1_field.txt"));
         for(int i=0;i<12;i++){
@@ -35,7 +50,6 @@ public class Controller {
             st=st.substring(2,st.length()-2);
             field[i]=st.split(",");
         }
-        System.out.println(field[2][1].length());
     }
     public void movePlayer(int x,int y){
         if(field[py+y][px+x].equals("0")) {
@@ -45,9 +59,13 @@ public class Controller {
             py=py+y;
         }
     }
-    public void placeBomb(MouseEvent mouseEvent) {
+    public void placeBomb(MouseEvent mouseEvent){
         bomb.setLayoutX(playerId.getLayoutX());
         bomb.setLayoutY(playerId.getLayoutY());
+        bx=px;
+        by=py;
+        bombTimerStartTime= (int) System.currentTimeMillis();
+        bombTimer.start();
     }
     public void checkDeath(){
         if(enemy1.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy2.getBoundsInParent().intersects(playerId.getBoundsInParent())||enemy3.getBoundsInParent().intersects(playerId.getBoundsInParent())){

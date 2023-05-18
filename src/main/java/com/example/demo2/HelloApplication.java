@@ -37,6 +37,19 @@ public class HelloApplication extends Application {
             gameController.checkWin();
         }
     };
+    AnimationTimer bombTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            try {
+                wait(3000);
+                System.out.println("boom");
+                this.stop();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    };
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("homeScreen.fxml"));
@@ -45,7 +58,6 @@ public class HelloApplication extends Application {
         Image image = new Image("file:main/java/resources/com.example.demo2/bomb_forlcon.png");
         stage.getIcons().add(image);
         stage.setScene(homeScreen);
-
 
         gameWithMusic = new GameWithMusic(); // Instantiate the GameWithMusic class
 
@@ -58,15 +70,6 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) throws IOException {
         launch();
-    }
-
-    public void checkEnemyTouchPlayer() {
-    }
-
-    public void checkEnemyTouchWalls() {
-    }
-
-    public void checkPlayerTouchWalls() {
     }
 
     public void startButtonClicked(MouseEvent mouseEvent) throws IOException {
