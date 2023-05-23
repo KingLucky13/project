@@ -30,8 +30,25 @@ public class Controller {
     public int py=1;
     public int bx;
     public int by;
+    public int mx;
+    public int my;
     public String[][] field = new String[12][18];
     int bombTimerStartTime;
+    int moveTime=0;
+    boolean isMoving=false;
+    AnimationTimer playerMoveTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            playerId.setLayoutX(playerId.getLayoutX() + mx * 1);
+            playerId.setLayoutY(playerId.getLayoutY() + my * 1);
+            moveTime+=1;
+            if(moveTime==50){
+                moveTime=0;
+                isMoving=false;
+                stop();
+            }
+        }
+    };
     AnimationTimer bombTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -52,11 +69,13 @@ public class Controller {
         }
     }
     public void movePlayer(int x,int y){
-        if(field[py+y][px+x].equals("0")) {
-            playerId.setLayoutX(playerId.getLayoutX() + x * 50);
-            playerId.setLayoutY(playerId.getLayoutY() + y * 50);
+        if(field[py+y][px+x].equals("0") && !isMoving) {
+            isMoving=true;
+            mx=x;
+            my=y;
             px=px+x;
             py=py+y;
+            playerMoveTimer.start();
         }
     }
     public void placeBomb(MouseEvent mouseEvent){
