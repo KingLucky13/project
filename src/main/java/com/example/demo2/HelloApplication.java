@@ -71,17 +71,20 @@ public class HelloApplication extends Application {
         stage.show();
         checkDeathTimer.start();
         checkWinTimer.start();
+
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(event.getCharacter().equals("w"))
-                gameController.movePlayer(0,-1);
-                else if(event.getCharacter().equals("s"))
+                if((event.getCharacter().equals("w"))||(event.getCharacter().equals("ц")))
+                    gameController.movePlayer(0,-1);
+                else if((event.getCharacter().equals("s"))||(event.getCharacter().equals("ы")))
                     gameController.movePlayer(0,1);
-                else if(event.getCharacter().equals("d"))
+                else if((event.getCharacter().equals("d"))||(event.getCharacter().equals("в")))
                     gameController.movePlayer(1,0);
-                else if(event.getCharacter().equals("a"))
+                else if((event.getCharacter().equals("a"))||(event.getCharacter().equals("ф")))
                     gameController.movePlayer(-1,0);
+                else if((event.getCharacter().equals("e"))||(event.getCharacter().equals("у")))
+                    gameController.placeBomb();
             }
         });
     }
