@@ -764,7 +764,7 @@
          <image>
             <Image url="@bomb_forIcon.png" />
          </image></ImageView>
-      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#placeBomb">
+      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0">
          <image>
             <Image url="@player.png" />
          </image>
