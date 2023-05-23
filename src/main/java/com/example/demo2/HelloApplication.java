@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -12,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,19 +37,6 @@ public class HelloApplication extends Application {
         @Override
         public void handle(long l) {
             gameController.checkWin();
-        }
-    };
-    AnimationTimer bombTimer=new AnimationTimer() {
-        @Override
-        public void handle(long l) {
-            try {
-                wait(3000);
-                System.out.println("boom");
-                this.stop();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
         }
     };
     @Override
@@ -75,7 +64,7 @@ public class HelloApplication extends Application {
     public void startButtonClicked(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("level1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 600);
-        Stage stage = new Stage();
+        Stage stage=(Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         gameController=fxmlLoader.getController();
         gameController.parseField();
         stage.setScene(scene);
