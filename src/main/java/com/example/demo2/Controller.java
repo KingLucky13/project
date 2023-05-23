@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Controller {
@@ -35,8 +36,15 @@ public class Controller {
     AnimationTimer bombTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            if((int)System.currentTimeMillis()-bombTimerStartTime>=500){
-                System.out.println("boom "+bx+" "+by);
+            if((int)System.currentTimeMillis()-bombTimerStartTime>=1500){
+                if(field[by][bx + 1].equals("2"))
+                    field[by][bx + 1] = "0";
+                if(field[by + 1][bx].equals("2"))
+                    field[by + 1][bx] = "0";
+                if(field[by - 1][bx].equals("2"))
+                    field[by - 1][bx] = "0";
+                if(field[by][bx - 1].equals("2"))
+                    field[by][bx - 1] = "0";
                 bomb.setLayoutX(-100);
                 stop();
             }
@@ -57,9 +65,11 @@ public class Controller {
             playerId.setLayoutY(playerId.getLayoutY() + y * 50);
             px=px+x;
             py=py+y;
+            System.out.println(py + " " + px);
+            System.out.println(field[py][px]);
         }
     }
-    public void placeBomb(MouseEvent mouseEvent){
+    public void placeBomb(){
         bomb.setLayoutX(playerId.getLayoutX());
         bomb.setLayoutY(playerId.getLayoutY());
         bx=px;
