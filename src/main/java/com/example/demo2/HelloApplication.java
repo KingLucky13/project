@@ -36,6 +36,8 @@ public class HelloApplication extends Application {
                 gameController.checkDeath();
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
         }
     };

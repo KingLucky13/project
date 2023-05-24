@@ -79,6 +79,9 @@ public class Controller {
                 moveTime1=0;
                 if(Math.abs(px-e1x)<=2 && Math.abs(py-e1y)<=2){
                     if((px-e1x)<=0 && (py-e1y)<0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
+                        if(field[e1y-1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=-1;
                         field[e1y-1][e1x] = "4";
@@ -86,6 +89,9 @@ public class Controller {
                         e1y=e1y-1;
                         e1x=e1x+0;
                     }else if((px-e1x)<=0 && (py-e1y)<0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
+                        if(field[e1y][e1x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=-1;
                         ne1y=0;
                         field[e1y][e1x-1] = "4";
@@ -93,6 +99,9 @@ public class Controller {
                         e1y=e1y;
                         e1x=e1x-1;
                     }else if((px-e1x)<0 && (py-e1y)>=0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
+                        if(field[e1y][e1x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=-1;
                         ne1y=0;
                         field[e1y][e1x-1] = "4";
@@ -100,6 +109,9 @@ public class Controller {
                         e1y=e1y;
                         e1x=e1x-1;
                     }else if((px-e1x)<0 && (py-e1y)>=0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
+                        if(field[e1y+1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=1;
                         field[e1y+1][e1x] = "4";
@@ -107,6 +119,9 @@ public class Controller {
                         e1y=e1y+1;
                         e1x=e1x;
                     }else if((px-e1x)>=0 && (py-e1y)>0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
+                        if(field[e1y+1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=1;
                         field[e1y+1][e1x] = "4";
@@ -114,6 +129,9 @@ public class Controller {
                         e1y=e1y+1;
                         e1x=e1x+0;
                     }else if((px-e1x)>=0 && (py-e1y)>0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
+                        if(field[e1y][e1x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=1;
                         ne1y=0;
                         field[e1y][e1x+1] = "4";
@@ -121,6 +139,9 @@ public class Controller {
                         e1y=e1y;
                         e1x=e1x+1;
                     }else if((px-e1x)>0 && (py-e1y)<=0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
+                        if(field[e1y][e1x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=1;
                         ne1y=0;
                         field[e1y][e1x+1] = "4";
@@ -128,6 +149,9 @@ public class Controller {
                         e1y=e1y;
                         e1x=e1x+1;
                     }else if((px-e1x)>0 && (py-e1y)<=0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
+                        if(field[e1y-1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=-1;
                         field[e1y-1][e1x] = "4";
@@ -140,6 +164,9 @@ public class Controller {
                     }
                 }else{
                     if(field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3")){
+                        if(field[e1y-1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=-1;
                         field[e1y-1][e1x] = "4";
@@ -147,6 +174,9 @@ public class Controller {
                         e1y=e1y-1;
                         e1x=e1x+0;
                     }else if(field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3")){
+                        if(field[e1y][e1x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=1;
                         ne1y=0;
                         field[e1y][e1x+1] = "4";
@@ -154,6 +184,9 @@ public class Controller {
                         e1y=e1y+0;
                         e1x=e1x+1;
                     }else if(field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3")){
+                        if(field[e1y][e1x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=-1;
                         ne1y=0;
                         field[e1y][e1x-1] = "4";
@@ -161,6 +194,9 @@ public class Controller {
                         e1y=e1y+0;
                         e1x=e1x-1;
                     }else if(field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3")){
+                        if(field[e1y+1][e1x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne1x=0;
                         ne1y=1;
                         field[e1y+1][e1x] = "4";
@@ -641,11 +677,11 @@ public class Controller {
         }
     }
     public void movePlayer(int x,int y) throws IOException, InterruptedException {
-        if(field[py+y][px+x].equals("4")){
-            if(!isMoving){
-            checkDeath = true;
-            }
-        }
+        //if(field[py+y][px+x].equals("4")){
+          //  if(!isMoving){
+            //checkDeath = true;
+            //}
+        //}
         if(field[py+y][px+x].equals("0") && !isMoving) {
             isMoving=true;
             mx=x;
@@ -670,7 +706,7 @@ public class Controller {
 
         }
     }
-    public void checkDeath() throws IOException {
+    public void checkDeath() throws IOException, InterruptedException {
         if(checkDeath){
             FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("defeatScreen.fxml"));
             Scene scene = new Scene(fxmlLoader2.load(), 900, 600);
