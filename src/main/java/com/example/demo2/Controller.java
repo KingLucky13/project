@@ -2,8 +2,12 @@ package com.example.demo2;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,11 +26,13 @@ public class Controller {
     @FXML
     public Pane stones;
     public Pane enemies;
+    public Pane booms;
     boolean isEnemyAlive1=true;
     boolean isEnemyAlive2=true;
     boolean isEnemyAlive3=true;
     public ImageView bomb;
     public ImageView playerId;
+    public ImageView boom;
     public int px=1;
     public int py=1;
     public int bx;
@@ -51,12 +57,75 @@ public class Controller {
             }
         }
     };
+    AnimationTimer boomTimer1 = new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            if((int)System.currentTimeMillis() - bombTimerStartTime >= 1000){
+                bomb.setLayoutX(-100);
+                boom.setLayoutX(bx * 50);
+                boom.setLayoutY(by * 50);
+                if (field[by][bx].equals("3")){
+                    checkDeath = true;
+                    bombTimer.stop();
+                }
+                stop();
+            }
+        }
+    };
+    AnimationTimer boomTimer2 = new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            if((int)System.currentTimeMillis() - bombTimerStartTime >= 1600){
+                if(!field[by][bx+1].equals("1")){
+                    for(int i = 0; i < booms.getChildren().size(); i++){
+                        if((booms.getChildren().get(i).getLayoutX() == -100)){
+                            booms.getChildren().get(i).setLayoutY(by * 50);
+                            booms.getChildren().get(i).setLayoutX((bx + 1) * 50);
+                            break;
+                        }
+                    }
+                }
+                if(!field[by][bx-1].equals("1")){
+                    for(int i = 0; i < booms.getChildren().size(); i++){
+                        if((booms.getChildren().get(i).getLayoutX() == -100)){
+                            booms.getChildren().get(i).setLayoutY(by * 50);
+                            booms.getChildren().get(i).setLayoutX((bx - 1) * 50);
+                            break;
+                        }
+                    }
+                }
+                if(!field[by+1][bx].equals("1")){
+                    for(int i = 0; i < booms.getChildren().size(); i++){
+                        if((booms.getChildren().get(i).getLayoutX() == -100)){
+                            booms.getChildren().get(i).setLayoutX(bx * 50);
+                            booms.getChildren().get(i).setLayoutY((by + 1) * 50);
+                            break;
+                        }
+                    }
+                }
+                if(!field[by-1][bx].equals("1")){
+                    for(int i = 0; i < booms.getChildren().size(); i++){
+                        if((booms.getChildren().get(i).getLayoutX() == -100)){
+                            booms.getChildren().get(i).setLayoutX(bx * 50);
+                            booms.getChildren().get(i).setLayoutY((by - 1) * 50);
+                            break;
+                        }
+                    }
+                }
+                stop();
+            }
+        }
+    };
     AnimationTimer bombTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            if((int)System.currentTimeMillis()-bombTimerStartTime>=1500){
+            if((int)System.currentTimeMillis()-bombTimerStartTime>=1800){
                 int y = 0;
                 int x = 0;
+                boom.setLayoutX(-100);
+                for(int i = 0; i < booms.getChildren().size(); i++){
+                    booms.getChildren().get(i).setLayoutX(-100);
+                }
                 if(field[by][bx + 1].equals("2")) {
                     field[by][bx + 1] = "0";
                     for(int i = 0; i < stones.getChildren().size(); i++){
@@ -156,7 +225,6 @@ public class Controller {
                 if((field[by][bx].equals("3")) || (Objects.equals(bombLoyout1, "3")) || (Objects.equals(bombLoyout2, "3")) || (Objects.equals(bombLoyout3, "3")) || (Objects.equals(bombLoyout4, "3"))){
                     checkDeath = true;
                 }
-                bomb.setLayoutX(-100);
                 stop();
             }
         }
@@ -194,18 +262,33 @@ public class Controller {
         bx=px;
         by=py;
         bombTimerStartTime= (int) System.currentTimeMillis();
+        boomTimer1.start();
+        boomTimer2.start();
         bombTimer.start();
         }
     }
-    public void checkDeath(){
+    public void checkDeath() throws IOException {
         if(checkDeath){
+            FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("defeatScreen.fxml"));
+            Scene scene = new Scene(fxmlLoader2.load(), 900, 600);
+            Stage stage = (Stage) playerId.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
             System.out.println("Death");
             checkDeath = false;
         }
     }
-    public void checkWin(){
+    public void checkWin() throws IOException {
         if(!isEnemyAlive1 && !isEnemyAlive2 && !isEnemyAlive3){
+            FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("victoryScreen.fxml"));
+            Scene scene = new Scene(fxmlLoader2.load(), 900, 600);
+            Stage stage = (Stage) playerId.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
             System.out.println("win");
+            isEnemyAlive1 = true;
+            isEnemyAlive2 = true;
+            isEnemyAlive3 = true;
         }
     }
 }

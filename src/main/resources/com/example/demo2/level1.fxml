@@ -750,14 +750,14 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#placeBomb">
-         <image>
-            <Image url="@playernew.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="bomb" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="-83.0">
          <image>
             <Image url="@bomb.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#placeBomb">
+         <image>
+            <Image url="@playernew.png" />
          </image>
       </ImageView>
       <Pane fx:id="enemies" prefHeight="600.0" prefWidth="900.0">
@@ -779,5 +779,34 @@
             </ImageView>
          </children>
       </Pane>
+      <Pane fx:id="booms" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0">
+               <image>
+                  <Image url="@boom.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0">
+               <image>
+                  <Image url="@boom.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0">
+               <image>
+                  <Image url="@boom.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="boom1" fitHeight="50.0" fitWidth="50.0" layoutX="-100.0">
+               <image>
+                  <Image url="@bigBoom.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fx:id="boom" fitHeight="50.0" fitWidth="50.0" layoutX="-100.0">
+         <image>
+            <Image url="@bigBoom.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

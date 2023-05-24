@@ -29,13 +29,21 @@ public class HelloApplication extends Application {
     AnimationTimer checkDeathTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            gameController.checkDeath();
+            try {
+                gameController.checkDeath();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     };
     AnimationTimer checkWinTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            gameController.checkWin();
+            try {
+                gameController.checkWin();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     };
     AnimationTimer bombTimer=new AnimationTimer() {
