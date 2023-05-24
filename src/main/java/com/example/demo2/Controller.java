@@ -42,26 +42,346 @@ public class Controller {
     public int my;
     public int e1x=5;
     public int e1y=10;
-    public int ne1x=0;
-    public int ne1y=1;
+    public int e2x=7;
+    public int e2y=9;
+    public int e3x=16;
+    public int e3y=6;
+    public int ne1x;
+    public int ne1y;
+    public int ne2x;
+    public int ne2y;
+    public int ne3x;
+    public int ne3y;
     public String[][] field = new String[12][18];
     int bombTimerStartTime;
     int moveTime=0;
+    int moveTime1=0;
+    int moveTime2=0;
+    int moveTime3=0;
     boolean isMoving=false;
     boolean checkDeath=false;
 
     AnimationTimer enemy1MoveTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            enemy1.setLayoutX(enemy1.getLayoutX() + ne1x * 2);
-            enemy1.setLayoutY(enemy1.getLayoutY() + ne1y * 2);
-            moveTime+=1;
-            if(moveTime==25){
-                moveTime=0;
-                stop();
+            enemy1.setLayoutX(enemy1.getLayoutX() + ne1x);
+            enemy1.setLayoutY(enemy1.getLayoutY() + ne1y);
+            moveTime1+=1;
+            if(moveTime1==50){
+                moveTime1=0;
+                if(Math.abs(px-e1x)<=2 && Math.abs(py-e1y)<=2){
+                    if((px-e1x)<=0 && (py-e1y)<=0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
+                        ne1x=0;
+                        ne1y=-1;
+                        field[e1y-1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y-1;
+                        e1x=e1x+0;
+                    }else if((px-e1x)<=0 && (py-e1y)<=0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
+                        ne1x=-1;
+                        ne1y=0;
+                        field[e1y][e1x-1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y;
+                        e1x=e1x-1;
+                    }else if((px-e1x)<0 && (py-e1y)>0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
+                        ne1x=0;
+                        ne1y=1;
+                        field[e1y+1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y+1;
+                        e1x=e1x;
+                    }else if((px-e1x)<0 && (py-e1y)>0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
+                        ne1x=-1;
+                        ne1y=0;
+                        field[e1y][e1x-1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y;
+                        e1x=e1x-1;
+                    }else if((px-e1x)>=0 && (py-e1y)>=0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
+                        ne1x=0;
+                        ne1y=1;
+                        field[e1y+1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y+1;
+                        e1x=e1x+0;
+                    }else if((px-e1x)>=0 && (py-e1y)>=0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
+                        ne1x=1;
+                        ne1y=0;
+                        field[e1y][e1x+1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y;
+                        e1x=e1x+1;
+                    }else if((px-e1x)>0 && (py-e1y)<0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
+                        ne1x=0;
+                        ne1y=-1;
+                        field[e1y-1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y-1;
+                        e1x=e1x;
+                    }else if((px-e1x)>0 && (py-e1y)<0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
+                        ne1x=1;
+                        ne1y=0;
+                        field[e1y][e1x+1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y;
+                        e1x=e1x+1;
+                    }else{
+                        ne1x=0;
+                        ne1y=0;
+                    }
+                }else{
+                    if(field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3")){
+                        ne1x=0;
+                        ne1y=-1;
+                        field[e1y-1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y-1;
+                        e1x=e1x+0;
+                    }else if(field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3")){
+                        ne1x=1;
+                        ne1y=0;
+                        field[e1y][e1x+1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y+0;
+                        e1x=e1x+1;
+                    }else if(field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3")){
+                        ne1x=-1;
+                        ne1y=0;
+                        field[e1y][e1x-1] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y+0;
+                        e1x=e1x-1;
+                    }else if(field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3")){
+                        ne1x=0;
+                        ne1y=1;
+                        field[e1y+1][e1x] = "4";
+                        field[e1y][e1x] = "0";
+                        e1y=e1y+1;
+                        e1x=e1x+0;
+                    }else{
+                        ne1x=0;
+                        ne1y=0;
+                    }
+                }
             }
         }
     };
+
+    AnimationTimer enemy2MoveTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            enemy2.setLayoutX(enemy2.getLayoutX() + ne2x);
+            enemy2.setLayoutY(enemy2.getLayoutY() + ne2y);
+            moveTime2+=1;
+            if(moveTime2==50){
+                moveTime2=0;
+                if(Math.abs(px-e2x)<=3 && Math.abs(py-e2y)<=3){
+                    if((px-e2x)<=0 && (py-e2y)>=0 && (field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3"))){
+                        ne2x=0;
+                        ne2y=1;
+                        field[e2y+1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y+1;
+                        e2x=e2x+0;
+                    }else if((px-e2x)<=0 && (py-e2y)>=0 && (field[e2y][e2x-1].equals("0") || field[e2y][e2x-1].equals("3"))){
+                        ne2x=-1;
+                        ne2y=0;
+                        field[e2y][e2x-1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y;
+                        e2x=e2x-1;
+                    }else if((px-e2x)<0 && (py-e2y)<0 && (field[e2y-1][e2x].equals("0") || field[e2y-1][e2x].equals("3"))){
+                        ne2x=0;
+                        ne2y=-1;
+                        field[e2y-1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y-1;
+                        e2x=e2x;
+                    }else if((px-e2x)<0 && (py-e2y)<0 && (field[e2y][e2x-1].equals("0") || field[e2y][e2x-1].equals("3"))){
+                        ne2x=-1;
+                        ne2y=0;
+                        field[e2y][e2x-1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y;
+                        e2x=e2x-1;
+                    }else if((px-e2x)>=0 && (py-e2y)<=0 && (field[e2y-1][e2x].equals("0") || field[e2y-1][e2x].equals("3"))){
+                        ne2x=0;
+                        ne2y=-1;
+                        field[e2y-1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y-1;
+                        e2x=e2x+0;
+                    }else if((px-e2x)>=0 && (py-e2y)<=0 && (field[e2y][e2x+1].equals("0") || field[e2y][e2x+1].equals("3"))){
+                        ne2x=1;
+                        ne2y=0;
+                        field[e2y][e2x+1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y;
+                        e2x=e2x+1;
+                    }else if((px-e2x)>0 && (py-e2y)>0 && (field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3"))){
+                        ne2x=0;
+                        ne2y=1;
+                        field[e2y+1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y+1;
+                        e2x=e2x;
+                    }else if((px-e2x)>0 && (py-e2y)>0 && (field[e2y][e2x+1].equals("0") || field[e2y][e2x+1].equals("3"))){
+                        ne2x=1;
+                        ne2y=0;
+                        field[e2y][e2x+1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y;
+                        e2x=e2x+1;
+                    }else{
+                        ne2x=0;
+                        ne2y=0;
+                    }
+                }else{
+                    if(field[e2y-1][e2x].equals("0") || field[e2y-1][e2x].equals("3")){
+                        ne2x=0;
+                        ne2y=-1;
+                        field[e2y-1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y-1;
+                        e2x=e2x+0;
+                    }else if(field[e2y][e2x+1].equals("0") || field[e2y][e2x+1].equals("3")){
+                        ne2x=1;
+                        ne2y=0;
+                        field[e2y][e2x+1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y+0;
+                        e2x=e2x+1;
+                    }else if(field[e2y][e2x-1].equals("0") || field[e2y][e2x-1].equals("3")){
+                        ne2x=-1;
+                        ne2y=0;
+                        field[e2y][e2x-1] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y+0;
+                        e2x=e2x-1;
+                    }else if(field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3")){
+                        ne2x=0;
+                        ne2y=1;
+                        field[e2y+1][e2x] = "4";
+                        field[e2y][e2x] = "0";
+                        e2y=e2y+1;
+                        e2x=e2x+0;
+                    }else{
+                        ne2x=0;
+                        ne2y=0;
+                    }
+                }
+            }
+        }
+    };
+
+    AnimationTimer enemy3MoveTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            enemy3.setLayoutX(enemy3.getLayoutX() + ne3x);
+            enemy3.setLayoutY(enemy3.getLayoutY() + ne3y);
+            moveTime3+=1;
+            if(moveTime3==50){
+                moveTime3=0;
+                if(Math.abs(px-e3x)<=3 && Math.abs(py-e3y)<=3){
+                    if((px-e3x)<=0 && (py-e3y)>=0 && (field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3"))){
+                        ne3x=0;
+                        ne3y=1;
+                        field[e3y+1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y+1;
+                        e3x=e3x+0;
+                    }else if((px-e3x)<=0 && (py-e3y)>=0 && (field[e3y][e3x-1].equals("0") || field[e3y][e3x-1].equals("3"))){
+                        ne3x=-1;
+                        ne3y=0;
+                        field[e3y][e3x-1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y;
+                        e3x=e3x-1;
+                    }else if((px-e3x)<0 && (py-e3y)<0 && (field[e3y-1][e3x].equals("0") || field[e3y-1][e3x].equals("3"))){
+                        ne3x=0;
+                        ne3y=-1;
+                        field[e3y-1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y-1;
+                        e3x=e3x;
+                    }else if((px-e3x)<0 && (py-e3y)<0 && (field[e3y][e3x-1].equals("0") || field[e3y][e3x-1].equals("3"))){
+                        ne3x=-1;
+                        ne3y=0;
+                        field[e3y][e3x-1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y;
+                        e3x=e3x-1;
+                    }else if((px-e3x)>=0 && (py-e3y)<=0 && (field[e3y-1][e3x].equals("0") || field[e3y-1][e3x].equals("3"))){
+                        ne3x=0;
+                        ne3y=-1;
+                        field[e3y-1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y-1;
+                        e3x=e3x+0;
+                    }else if((px-e3x)>=0 && (py-e3y)<=0 && (field[e3y][e3x+1].equals("0") || field[e3y][e3x+1].equals("3"))){
+                        ne3x=1;
+                        ne3y=0;
+                        field[e3y][e3x+1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y;
+                        e3x=e3x+1;
+                    }else if((px-e3x)>0 && (py-e3y)>0 && (field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3"))){
+                        ne3x=0;
+                        ne3y=1;
+                        field[e3y+1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y+1;
+                        e3x=e3x;
+                    }else if((px-e3x)>0 && (py-e3y)>0 && (field[e3y][e3x+1].equals("0") || field[e3y][e3x+1].equals("3"))){
+                        ne3x=1;
+                        ne3y=0;
+                        field[e3y][e3x+1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y;
+                        e3x=e3x+1;
+                    }else{
+                        ne3x=0;
+                        ne3y=0;
+                    }
+                }else{
+                    if(field[e3y-1][e3x].equals("0") || field[e3y-1][e3x].equals("3")){
+                        ne3x=0;
+                        ne3y=-1;
+                        field[e3y-1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y-1;
+                        e3x=e3x+0;
+                    }else if(field[e3y][e3x+1].equals("0") || field[e3y][e3x+1].equals("3")){
+                        ne3x=1;
+                        ne3y=0;
+                        field[e3y][e3x+1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y+0;
+                        e3x=e3x+1;
+                    }else if(field[e3y][e3x-1].equals("0") || field[e3y][e3x-1].equals("3")){
+                        ne3x=-1;
+                        ne3y=0;
+                        field[e3y][e3x-1] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y+0;
+                        e3x=e3x-1;
+                    }else if(field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3")){
+                        ne3x=0;
+                        ne3y=1;
+                        field[e3y+1][e3x] = "4";
+                        field[e3y][e3x] = "0";
+                        e3y=e3y+1;
+                        e3x=e3x+0;
+                    }else{
+                        ne3x=0;
+                        ne3y=0;
+                    }
+                }
+            }
+        }
+    };
+
     AnimationTimer playerMoveTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -314,116 +634,6 @@ public class Controller {
             px=px+x;
             py=py+y;
             playerMoveTimer.start();
-        }
-    }
-
-    public void moveEnemy1() {
-        if(Math.abs(px-e1x)<=3 && Math.abs(py-e1y)<=3){
-            if((px-e1x)<=0 && (py-e1y)>=0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
-                ne1x=0;
-                ne1y=1;
-                field[e1y+1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y+1;
-                e1x=e1x+0;
-                enemy1MoveTimer.start();
-            }else if((px-e1x)<=0 && (py-e1y)>=0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
-                ne1x=-1;
-                ne1y=0;
-                field[e1y][e1x-1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y;
-                e1x=e1x-1;
-                enemy1MoveTimer.start();
-            }
-            if((px-e1x)<0 && (py-e1y)<0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
-                ne1x=0;
-                ne1y=-1;
-                field[e1y-1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y-1;
-                e1x=e1x;
-                enemy1MoveTimer.start();
-            }else if((px-e1x)<0 && (py-e1y)<0 && (field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3"))){
-                ne1x=-1;
-                ne1y=0;
-                field[e1y][e1x-1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y;
-                e1x=e1x-1;
-                enemy1MoveTimer.start();
-            }
-            if((px-e1x)>=0 && (py-e1y)<=0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
-                ne1x=1;
-                ne1y=0;
-                field[e1y][e1x+1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y;
-                e1x=e1x+1;
-                enemy1MoveTimer.start();
-            }else if((px-e1x)>=0 && (py-e1y)<=0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
-                ne1x=0;
-                ne1y=-1;
-                field[e1y-1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y-1;
-                e1x=e1x+0;
-                enemy1MoveTimer.start();
-            }
-            if((px-e1x)>0 && (py-e1y)>0 && (field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3"))){
-                ne1x=0;
-                ne1y=1;
-                field[e1y+1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y+1;
-                e1x=e1x;
-                enemy1MoveTimer.start();
-            }else if((px-e1x)>0 && (py-e1y)>0 && (field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3"))){
-                ne1x=1;
-                ne1y=0;
-                field[e1y][e1x+1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y;
-                e1x=e1x+1;
-                enemy1MoveTimer.start();
-            }
-        }else{
-            if(field[e1y+1][e1x].equals("0") || field[e1y+1][e1x].equals("3")){
-                ne1x=0;
-                ne1y=1;
-                field[e1y+1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y+1;
-                e1x=e1x+0;
-                enemy1MoveTimer.start();
-            }
-            if(field[e1y][e1x+1].equals("0") || field[e1y][e1x+1].equals("3")){
-                ne1x=1;
-                ne1y=0;
-                field[e1y][e1x+1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y+0;
-                e1x=e1x+1;
-                enemy1MoveTimer.start();
-            }
-            if(field[e1y][e1x-1].equals("0") || field[e1y][e1x-1].equals("3")){
-                ne1x=-1;
-                ne1y=0;
-                field[e1y][e1x-1] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y+0;
-                e1x=e1x-1;
-                enemy1MoveTimer.start();
-            }
-            if(field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3")){
-                ne1x=0;
-                ne1y=-1;
-                field[e1y-1][e1x] = "4";
-                field[e1y][e1x] = "0";
-                e1y=e1y-1;
-                e1x=e1x+0;
-                enemy1MoveTimer.start();
-            }
         }
     }
 

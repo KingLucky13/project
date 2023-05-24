@@ -46,6 +46,7 @@ public class HelloApplication extends Application {
             }
         }
     };
+
     AnimationTimer bombTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -91,7 +92,9 @@ public class HelloApplication extends Application {
         stage.show();
         checkDeathTimer.start();
         checkWinTimer.start();
-        gameController.moveEnemy1();
+        gameController.enemy1MoveTimer.start();
+        gameController.enemy2MoveTimer.start();
+        gameController.enemy3MoveTimer.start();
 
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
