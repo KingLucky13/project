@@ -3,12 +3,12 @@ package com.example.demo2;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import javax.print.attribute.standard.Media;
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,6 +27,7 @@ public class Controller {
     public Pane stones;
     public Pane enemies;
     public Pane booms;
+    public Pane patches;
     boolean isEnemyAlive1=true;
     boolean isEnemyAlive2=true;
     boolean isEnemyAlive3=true;
@@ -150,6 +151,13 @@ public class Controller {
                             stones.getChildren().get(i).setLayoutX(-100);
                         }
                     }
+                    for (int i = 0; i < patches.getChildren().size(); i++){
+                        if(patches.getChildren().get(i).getLayoutX() == -100){
+                            patches.getChildren().get(i).setLayoutX((bx+1) * 50);
+                            patches.getChildren().get(i).setLayoutY(by * 50);
+                            break;
+                        }
+                    }
                 }
                 if (field[by][bx+1].equals("4")){
                     field[by][bx+1] = "0";
@@ -171,6 +179,13 @@ public class Controller {
                     for(int i = 0; i < stones.getChildren().size(); i++){
                         if((stones.getChildren().get(i).getLayoutX() == 50 * (bx)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by+1))){
                             stones.getChildren().get(i).setLayoutX(-100);
+                        }
+                    }
+                    for (int i = 0; i < patches.getChildren().size(); i++){
+                        if(patches.getChildren().get(i).getLayoutX() == -100){
+                            patches.getChildren().get(i).setLayoutX((bx) * 50);
+                            patches.getChildren().get(i).setLayoutY((by+1) * 50);
+                            break;
                         }
                     }
                 }
@@ -196,6 +211,13 @@ public class Controller {
                             stones.getChildren().get(i).setLayoutX(-100);
                         }
                     }
+                    for (int i = 0; i < patches.getChildren().size(); i++){
+                        if(patches.getChildren().get(i).getLayoutX() == -100){
+                            patches.getChildren().get(i).setLayoutX((bx-1) * 50);
+                            patches.getChildren().get(i).setLayoutY(by * 50);
+                            break;
+                        }
+                    }
                 }
                 if (field[by][bx-1].equals("4")){
                     field[by][bx-1] = "0";
@@ -219,11 +241,33 @@ public class Controller {
                             stones.getChildren().get(i).setLayoutX(-100);
                         }
                     }
+                    for (int i = 0; i < patches.getChildren().size(); i++){
+                        if(patches.getChildren().get(i).getLayoutX() == -100){
+                            patches.getChildren().get(i).setLayoutX((bx) * 50);
+                            patches.getChildren().get(i).setLayoutY((by-1) * 50);
+                            break;
+                        }
+                    }
                 }
                 if (field[by-1][bx].equals("4")){
                     field[by-1][bx] = "0";
                     for(int i = 0; i < enemies.getChildren().size(); i++){
                         if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by-1))){
+                            enemies.getChildren().get(i).setVisible(false);
+                        }
+                    }
+                    if(isEnemyAlive1){
+                        isEnemyAlive1 = false;
+                    }else if(isEnemyAlive2){
+                        isEnemyAlive2 = false;
+                    }else {
+                        isEnemyAlive3 = false;
+                    }
+                }
+                if (field[by][bx].equals("4")){
+                    field[by][bx] = "0";
+                    for(int i = 0; i < enemies.getChildren().size(); i++){
+                        if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by))){
                             enemies.getChildren().get(i).setVisible(false);
                         }
                     }
