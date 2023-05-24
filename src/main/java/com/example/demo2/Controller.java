@@ -403,6 +403,17 @@ public class Controller {
             }
         }
     };
+    private void playSound(String soundFilePath) {
+        try {
+            File soundFile = new File(soundFilePath);
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(soundFile));
+            clip.start();
+        } catch (LineUnavailableException | IOException | UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        }
+    }
+
     AnimationTimer boomTimer1 = new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -415,6 +426,8 @@ public class Controller {
                     bombTimer.stop();
                 }
                 stop();
+                String soundFilePath = "src/main/resources/com/example/demo2/explosn9.wav";
+                playSound(soundFilePath);
             }
         }
     };
@@ -644,7 +657,6 @@ public class Controller {
             playerMoveTimer.start();
         }
     }
-
     public void placeBomb(){
         if(!isMoving){
         bomb.setLayoutX(playerId.getLayoutX());
@@ -655,6 +667,7 @@ public class Controller {
         boomTimer1.start();
         boomTimer2.start();
         bombTimer.start();
+
         }
     }
     public void checkDeath() throws IOException {
