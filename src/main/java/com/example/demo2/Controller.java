@@ -80,16 +80,16 @@ public class Controller {
                         isEnemyAlive3 = false;
                     }
                 }
-                if(field[by + 1][bx].equals("2")){
-                    field[by + 1][bx] = "0";
+                if(field[by+1][bx].equals("2")) {
+                    field[by+1][bx] = "0";
                     for(int i = 0; i < stones.getChildren().size(); i++){
-                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by + 1))){
+                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by+1))){
                             stones.getChildren().get(i).setLayoutX(-100);
                         }
                     }
                 }
                 if (field[by+1][bx].equals("4")){
-                    field[by + 1][bx] = "0";
+                    field[by+1][bx] = "0";
                     for(int i = 0; i < enemies.getChildren().size(); i++){
                         if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by+1))){
                             enemies.getChildren().get(i).setVisible(false);
@@ -103,50 +103,50 @@ public class Controller {
                         isEnemyAlive3 = false;
                     }
                 }
-                if(field[by - 1][bx].equals("2")) {
-                    field[by - 1][bx] = "0";
+                if(field[by][bx-1].equals("2")) {
+                    field[by][bx-1] = "0";
                     for(int i = 0; i < stones.getChildren().size(); i++){
-                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by - 1))){
-                            stones.getChildren().get(i).setLayoutX(-100);
-                        }
-                    }
-                }
-                if (field[by - 1][bx].equals("4")){
-                    field[by - 1][bx] = "0";
-                    for(int i = 0; i < enemies.getChildren().size(); i++){
-                        if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by-1))){
-                            enemies.getChildren().get(i).setVisible(false);
-                        }
-                        if(isEnemyAlive1){
-                            isEnemyAlive1 = false;
-                        }else if(isEnemyAlive2){
-                            isEnemyAlive2 = false;
-                        }else {
-                            isEnemyAlive3 = false;
-                        }
-                    }
-                }
-                if(field[by][bx - 1].equals("2")) {
-                    field[by][bx - 1] = "0";
-                    for(int i = 0; i < stones.getChildren().size(); i++){
-                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx - 1)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by))){
+                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx-1)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by))){
                             stones.getChildren().get(i).setLayoutX(-100);
                         }
                     }
                 }
                 if (field[by][bx-1].equals("4")){
-                    field[by][bx - 1] = "0";
+                    field[by][bx-1] = "0";
                     for(int i = 0; i < enemies.getChildren().size(); i++){
-                        if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx - 1)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by))){
+                        if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx-1)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by))){
                             enemies.getChildren().get(i).setVisible(false);
                         }
-                        if(isEnemyAlive1){
-                            isEnemyAlive1 = false;
-                        }else if(isEnemyAlive2){
-                            isEnemyAlive2 = false;
-                        }else {
-                            isEnemyAlive3 = false;
+                    }
+                    if(isEnemyAlive1){
+                        isEnemyAlive1 = false;
+                    }else if(isEnemyAlive2){
+                        isEnemyAlive2 = false;
+                    }else {
+                        isEnemyAlive3 = false;
+                    }
+                }
+                if(field[by-1][bx].equals("2")) {
+                    field[by-1][bx] = "0";
+                    for(int i = 0; i < stones.getChildren().size(); i++){
+                        if((stones.getChildren().get(i).getLayoutX() == 50 * (bx)) && (stones.getChildren().get(i).getLayoutY() == 50 * (by-1))){
+                            stones.getChildren().get(i).setLayoutX(-100);
                         }
+                    }
+                }
+                if (field[by-1][bx].equals("4")){
+                    field[by-1][bx] = "0";
+                    for(int i = 0; i < enemies.getChildren().size(); i++){
+                        if((enemies.getChildren().get(i).getLayoutX() == 50 * (bx)) && (enemies.getChildren().get(i).getLayoutY() == 50 * (by-1))){
+                            enemies.getChildren().get(i).setVisible(false);
+                        }
+                    }
+                    if(isEnemyAlive1){
+                        isEnemyAlive1 = false;
+                    }else if(isEnemyAlive2){
+                        isEnemyAlive2 = false;
+                    }else {
+                        isEnemyAlive3 = false;
                     }
                 }
                 String bombLoyout1 = field[by + 1][bx];
