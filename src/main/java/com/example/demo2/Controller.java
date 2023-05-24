@@ -12,6 +12,8 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -49,6 +51,12 @@ public class Controller {
     int moveTime=0;
     boolean isMoving=false;
     boolean checkDeath=false;
+    public ArrayList<ImageView> enemiesList;
+
+    {
+        enemiesList = new ArrayList<ImageView>();
+    }
+
 
     AnimationTimer enemy1MoveTimer=new AnimationTimer() {
         @Override
