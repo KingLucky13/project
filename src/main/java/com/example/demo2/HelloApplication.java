@@ -91,6 +91,7 @@ public class HelloApplication extends Application {
         stage.show();
         checkDeathTimer.start();
         checkWinTimer.start();
+        gameController.moveEnemy1();
 
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
