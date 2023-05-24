@@ -210,11 +210,205 @@
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="550.0">
-         <image>
-            <Image url="@wall.png" />
-         </image>
-      </ImageView>
+      <Pane fx:id="patches" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="50.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="90.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="90.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="90.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="90.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="90.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="100.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="60.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="70.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="80.0">
+               <image>
+                  <Image url="@patch.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="151.0">
          <image>
             <Image url="@wall.png" />
@@ -746,6 +940,11 @@
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="350.0">
+         <image>
+            <Image url="@wall.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="550.0">
          <image>
             <Image url="@wall.png" />
          </image>
