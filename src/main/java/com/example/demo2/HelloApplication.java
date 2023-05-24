@@ -13,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,6 +36,19 @@ public class HelloApplication extends Application {
         @Override
         public void handle(long l) {
             gameController.checkWin();
+        }
+    };
+    AnimationTimer bombTimer=new AnimationTimer() {
+        @Override
+        public void handle(long l) {
+            try {
+                wait(3000);
+                System.out.println("boom");
+                this.stop();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     };
     @Override
@@ -75,14 +87,36 @@ public class HelloApplication extends Application {
         scene.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if((event.getCharacter().equals("w"))||(event.getCharacter().equals("ц")))
-                    gameController.movePlayer(0,-1);
-                else if((event.getCharacter().equals("s"))||(event.getCharacter().equals("ы")))
-                    gameController.movePlayer(0,1);
-                else if((event.getCharacter().equals("d"))||(event.getCharacter().equals("в")))
-                    gameController.movePlayer(1,0);
-                else if((event.getCharacter().equals("a"))||(event.getCharacter().equals("ф")))
-                    gameController.movePlayer(-1,0);
+                if((event.getCharacter().equals("w"))||(event.getCharacter().equals("ц"))) {
+                    try {
+                        gameController.movePlayer(0,-1);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else if((event.getCharacter().equals("s"))||(event.getCharacter().equals("ы"))) {
+                    try {
+                        gameController.movePlayer(0,1);
+                    } catch (IOException | InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else if((event.getCharacter().equals("d"))||(event.getCharacter().equals("в"))) {
+                    try {
+                        gameController.movePlayer(1,0);
+                    } catch (IOException | InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else if((event.getCharacter().equals("a"))||(event.getCharacter().equals("ф"))) {
+                    try {
+                        gameController.movePlayer(-1,0);
+                    } catch (IOException | InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
                 else if((event.getCharacter().equals("e"))||(event.getCharacter().equals("у")))
                     gameController.placeBomb();
             }

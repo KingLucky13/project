@@ -1,25 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Controller">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
             <Image url="@grass.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="50.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="150.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
+      <Pane fx:id="stones" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="150.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="500.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="100.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@wall.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="50.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="400.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="300.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="250.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="500.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="200.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="350.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="200.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="250.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="200.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="250.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="300.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="450.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="100.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="100.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="400.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="150.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="450.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="250.0">
+               <image>
+                  <Image url="@wall.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="250.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="250.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="50.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="50.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="450.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="400.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="150.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="500.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="100.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="150.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="400.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="200.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="350.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="350.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="200.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="350.0">
+               <image>
+                  <Image url="@stone.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="550.0">
          <image>
             <Image url="@wall.png" />
@@ -36,11 +226,6 @@
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="100.0">
-         <image>
-            <Image url="@wall.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0">
          <image>
             <Image url="@wall.png" />
          </image>
@@ -405,49 +590,14 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="100.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="400.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="300.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="100.0" layoutY="250.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="100.0">
          <image>
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy1" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="500.0">
-         <image>
-            <Image url="@enemy.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="enemy2" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="450.0">
-         <image>
-            <Image url="@enemy.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="150.0">
          <image>
             <Image url="@wall.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="500.0">
-         <image>
-            <Image url="@stone.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="150.0">
@@ -463,11 +613,6 @@
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="250.0">
          <image>
             <Image url="@wall.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="200.0">
-         <image>
-            <Image url="@stone.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="300.0">
@@ -505,49 +650,9 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="200.0" layoutY="350.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="250.0">
          <image>
             <Image url="@wall.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="300.0" layoutY="200.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="250.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="200.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="250.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="750.0" layoutY="300.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="450.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="100.0">
-         <image>
-            <Image url="@stone.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="300.0">
@@ -595,36 +700,6 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="100.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="400.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="151.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="400.0" layoutY="450.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="enemy3" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="309.0">
-         <image>
-            <Image url="@enemy.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="250.0">
-         <image>
-            <Image url="@wall.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="300.0">
          <image>
             <Image url="@wall.png" />
@@ -655,54 +730,9 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="250.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="250.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="200.0">
          <image>
             <Image url="@wall.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="50.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="500.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="50.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="450.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="400.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="151.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="500.0">
-         <image>
-            <Image url="@stone.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="150.0">
@@ -715,59 +745,39 @@
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="100.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="151.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="600.0" layoutY="400.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="200.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="700.0" layoutY="350.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="650.0" layoutY="350.0">
          <image>
             <Image url="@wall.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="550.0" layoutY="350.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="450.0" layoutY="200.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="350.0">
-         <image>
-            <Image url="@stone.png" />
-         </image>
-      </ImageView>
-      <ImageView id="bomb" fx:id="bomb" fitHeight="50.0" fitWidth="50.0" layoutX="-100.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@bomb_forIcon.png" />
-         </image></ImageView>
       <ImageView fx:id="playerId" fitHeight="50.0" fitWidth="50.0" layoutX="50.0" layoutY="50.0" onMouseClicked="#placeBomb">
          <image>
             <Image url="@player.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="bomb" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="-83.0">
+         <image>
+            <Image url="@bomb.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="enemies" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fx:id="enemy1" fitHeight="50.0" fitWidth="50.0" layoutX="250.0" layoutY="500.0">
+               <image>
+                  <Image url="@enemy.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="enemy2" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="450.0">
+               <image>
+                  <Image url="@enemy.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="enemy3" fitHeight="50.0" fitWidth="50.0" layoutX="800.0" layoutY="300.0">
+               <image>
+                  <Image url="@enemy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </Pane>

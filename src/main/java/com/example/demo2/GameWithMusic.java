@@ -32,9 +32,6 @@ public class GameWithMusic {
 
     public static void main(String[] args) {
         GameWithMusic game = new GameWithMusic();
-        // Add your game logic here
-
-        // When you want to stop the music
         game.stopMusic();
     }
 }
