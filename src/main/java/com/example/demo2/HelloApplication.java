@@ -24,6 +24,7 @@ import java.util.Scanner;
 public class HelloApplication extends Application {
     @FXML
     public Button startButton;
+    public Button tryAgainButton;
     Controller gameController;
     private GameWithMusic gameWithMusic; // Declare the GameWithMusic instance as a class variable
     AnimationTimer checkDeathTimer=new AnimationTimer() {
