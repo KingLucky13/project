@@ -52,19 +52,6 @@ public class HelloApplication extends Application {
         }
     };
 
-    AnimationTimer bombTimer=new AnimationTimer() {
-        @Override
-        public void handle(long l) {
-            try {
-                wait(3000);
-                System.out.println("boom");
-                this.stop();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-    };
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("homeScreen.fxml"));
