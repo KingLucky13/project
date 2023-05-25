@@ -65,12 +65,12 @@ public class Controller {
     AnimationTimer enemy1MoveTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            enemy1.setLayoutX(enemy1.getLayoutX() + ne1x);
-            enemy1.setLayoutY(enemy1.getLayoutY() + ne1y);
+            enemy1.setLayoutX(enemy1.getLayoutX() + ne1x*1.25);
+            enemy1.setLayoutY(enemy1.getLayoutY() + ne1y*1.25);
             moveTime1+=1;
-            if(moveTime1==50){
+            if(moveTime1==40){
                 moveTime1=0;
-                if(Math.abs(px-e1x)<=2 && Math.abs(py-e1y)<=2){
+                if(Math.abs(px-e1x)<=3 && Math.abs(py-e1y)<=3){
                     if((px-e1x)<=0 && (py-e1y)<0 && (field[e1y-1][e1x].equals("0") || field[e1y-1][e1x].equals("3"))){
                         if(field[e1y-1][e1x].equals("3")){
                             checkDeath = true;
@@ -208,10 +208,10 @@ public class Controller {
     AnimationTimer enemy2MoveTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            enemy2.setLayoutX(enemy2.getLayoutX() + ne2x);
-            enemy2.setLayoutY(enemy2.getLayoutY() + ne2y);
+            enemy2.setLayoutX(enemy2.getLayoutX() + ne2x*1.25);
+            enemy2.setLayoutY(enemy2.getLayoutY() + ne2y*1.25);
             moveTime2+=1;
-            if(moveTime2==50){
+            if(moveTime2==40){
                 moveTime2=0;
                 if(Math.abs(px-e2x)<=3 && Math.abs(py-e2y)<=3){
                     if((px-e2x)<=0 && (py-e2y)>0 && (field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3"))){
@@ -339,10 +339,10 @@ public class Controller {
     AnimationTimer enemy3MoveTimer=new AnimationTimer() {
         @Override
         public void handle(long l) {
-            enemy3.setLayoutX(enemy3.getLayoutX() + ne3x);
-            enemy3.setLayoutY(enemy3.getLayoutY() + ne3y);
+            enemy3.setLayoutX(enemy3.getLayoutX() + ne3x*1.25);
+            enemy3.setLayoutY(enemy3.getLayoutY() + ne3y*1.25);
             moveTime3+=1;
-            if(moveTime3==50){
+            if(moveTime3==40){
                 moveTime3=0;
                 if(Math.abs(px-e3x)<=3 && Math.abs(py-e3y)<=3){
                     if((px-e3x)<=0 && (py-e3y)>0 && (field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3"))){
