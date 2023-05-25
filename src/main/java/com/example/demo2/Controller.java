@@ -215,6 +215,9 @@ public class Controller {
                 moveTime2=0;
                 if(Math.abs(px-e2x)<=3 && Math.abs(py-e2y)<=3){
                     if((px-e2x)<=0 && (py-e2y)>0 && (field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3"))){
+                        if(field[e2y+1][e2x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=0;
                         ne2y=1;
                         field[e2y+1][e2x] = "4";
@@ -222,6 +225,9 @@ public class Controller {
                         e2y=e2y+1;
                         e2x=e2x+0;
                     }else if((px-e2x)<=0 && (py-e2y)>0 && (field[e2y][e2x-1].equals("0") || field[e2y][e2x-1].equals("3"))){
+                        if(field[e2y][e2x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=-1;
                         ne2y=0;
                         field[e2y][e2x-1] = "4";
@@ -229,6 +235,9 @@ public class Controller {
                         e2y=e2y;
                         e2x=e2x-1;
                     }else if((px-e2x)<0 && (py-e2y)<=0 && (field[e2y][e2x-1].equals("0") || field[e2y][e2x-1].equals("3"))){
+                        if(field[e2y][e2x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=-1;
                         ne2y=0;
                         field[e2y][e2x-1] = "4";
@@ -236,6 +245,9 @@ public class Controller {
                         e2y=e2y;
                         e2x=e2x-1;
                     }else if((px-e2x)<0 && (py-e2y)<=0 && (field[e2y-1][e2x].equals("0") || field[e2y-1][e2x].equals("3"))){
+                        if(field[e2y-1][e2x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=0;
                         ne2y=-1;
                         field[e2y-1][e2x] = "4";
@@ -243,6 +255,9 @@ public class Controller {
                         e2y=e2y-1;
                         e2x=e2x;
                     }else if((px-e2x)>=0 && (py-e2y)<0 && (field[e2y-1][e2x].equals("0") || field[e2y-1][e2x].equals("3"))){
+                        if(field[e2y-1][e2x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=0;
                         ne2y=-1;
                         field[e2y-1][e2x] = "4";
@@ -250,6 +265,9 @@ public class Controller {
                         e2y=e2y-1;
                         e2x=e2x+0;
                     }else if((px-e2x)>=0 && (py-e2y)<0 && (field[e2y][e2x+1].equals("0") || field[e2y][e2x+1].equals("3"))){
+                        if(field[e2y][e2x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=1;
                         ne2y=0;
                         field[e2y][e2x+1] = "4";
@@ -257,6 +275,9 @@ public class Controller {
                         e2y=e2y;
                         e2x=e2x+1;
                     }else if((px-e2x)>0 && (py-e2y)>=0 && (field[e2y][e2x+1].equals("0") || field[e2y][e2x+1].equals("3"))){
+                        if(field[e2y][e2x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=1;
                         ne2y=0;
                         field[e2y][e2x+1] = "4";
@@ -264,6 +285,9 @@ public class Controller {
                         e2y=e2y;
                         e2x=e2x+1;
                     }else if((px-e2x)>0 && (py-e2y)>=0 && (field[e2y+1][e2x].equals("0") || field[e2y+1][e2x].equals("3"))){
+                        if(field[e2y+1][e2x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne2x=0;
                         ne2y=1;
                         field[e2y+1][e2x] = "4";
@@ -322,6 +346,9 @@ public class Controller {
                 moveTime3=0;
                 if(Math.abs(px-e3x)<=3 && Math.abs(py-e3y)<=3){
                     if((px-e3x)<=0 && (py-e3y)>0 && (field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3"))){
+                        if(field[e3y+1][e3x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=0;
                         ne3y=1;
                         field[e3y+1][e3x] = "4";
@@ -329,6 +356,9 @@ public class Controller {
                         e3y=e3y+1;
                         e3x=e3x+0;
                     }else if((px-e3x)<=0 && (py-e3y)>0 && (field[e3y][e3x-1].equals("0") || field[e3y][e3x-1].equals("3"))){
+                        if(field[e3y][e3x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=-1;
                         ne3y=0;
                         field[e3y][e3x-1] = "4";
@@ -336,6 +366,9 @@ public class Controller {
                         e3y=e3y;
                         e3x=e3x-1;
                     }else if((px-e3x)<0 && (py-e3y)<=0 && (field[e3y][e3x-1].equals("0") || field[e3y][e3x-1].equals("3"))){
+                        if(field[e3y][e3x-1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=-1;
                         ne3y=0;
                         field[e3y][e3x-1] = "4";
@@ -343,6 +376,9 @@ public class Controller {
                         e3y=e3y;
                         e3x=e3x-1;
                     }else if((px-e3x)<0 && (py-e3y)<=0 && (field[e3y-1][e3x].equals("0") || field[e3y-1][e3x].equals("3"))){
+                        if(field[e3y-1][e3x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=0;
                         ne3y=-1;
                         field[e3y-1][e3x] = "4";
@@ -350,6 +386,9 @@ public class Controller {
                         e3y=e3y-1;
                         e3x=e3x;
                     }else if((px-e3x)>=0 && (py-e3y)<0 && (field[e3y-1][e3x].equals("0") || field[e3y-1][e3x].equals("3"))){
+                        if(field[e3y-1][e3x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=0;
                         ne3y=-1;
                         field[e3y-1][e3x] = "4";
@@ -357,6 +396,9 @@ public class Controller {
                         e3y=e3y-1;
                         e3x=e3x+0;
                     }else if((px-e3x)>=0 && (py-e3y)<0 && (field[e3y][e3x+1].equals("0") || field[e3y][e3x+1].equals("3"))){
+                        if(field[e3y][e3x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=1;
                         ne3y=0;
                         field[e3y][e3x+1] = "4";
@@ -364,6 +406,9 @@ public class Controller {
                         e3y=e3y;
                         e3x=e3x+1;
                     }else if((px-e3x)>0 && (py-e3y)>=0 && (field[e3y][e3x+1].equals("0") || field[e3y][e3x+1].equals("3"))){
+                        if(field[e3y][e3x+1].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=1;
                         ne3y=0;
                         field[e3y][e3x+1] = "4";
@@ -371,6 +416,9 @@ public class Controller {
                         e3y=e3y;
                         e3x=e3x+1;
                     }else if((px-e3x)>0 && (py-e3y)>=0 && (field[e3y+1][e3x].equals("0") || field[e3y+1][e3x].equals("3"))){
+                        if(field[e3y+1][e3x].equals("3")){
+                            checkDeath = true;
+                        }
                         ne3x=0;
                         ne3y=1;
                         field[e3y+1][e3x] = "4";
